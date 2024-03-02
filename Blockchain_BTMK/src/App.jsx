@@ -8,12 +8,12 @@ function App() {
 
   return (
     <>
-        <h1>Hello Blockchain</h1>
-        {/* <BrowserRouter>
+        <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Navbar />}></Route>
             </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
+        <h1>Hello Blockchain</h1>
     </>
   )
 }
