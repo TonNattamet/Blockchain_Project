@@ -13,7 +13,6 @@ function App() {
                 <Route path='/' element={<Navbar />}></Route>
             </Routes>
         </BrowserRouter>
-        <h1>Hello Blockchain</h1>
     </>
   )
 }

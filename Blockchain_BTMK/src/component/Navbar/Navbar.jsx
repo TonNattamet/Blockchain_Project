@@ -12,7 +12,7 @@ function Navbar() {
                 <h3>Service</h3>
                 <h3>Blog</h3>
                 <h3>Contact</h3>
-                <h3>Search</h3>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
         </div>
     </div>
