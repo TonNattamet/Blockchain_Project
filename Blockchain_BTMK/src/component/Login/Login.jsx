@@ -11,7 +11,7 @@ function Login() {
             <p>welcome to website</p>
             <input type="text" placeholder='ID' />
             <input type="text" placeholder='Password' />
-            <p>forgot password ?</p>
+            <a className='forgot' href="#">forgot password ?</a>
 
             <div className="box-login">
                 <h3>Login</h3>
