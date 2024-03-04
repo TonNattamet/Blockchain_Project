@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './component/Navbar/Navbar'
 import {BrowserRouter, NavLink, Routes, Route} from 'react-router-dom';
+import Home from './component/Home/Home';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +10,7 @@ function App() {
     <>
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Navbar />}></Route>
+                <Route path='/' element={<Home />}></Route>
             </Routes>
         </BrowserRouter>
     </>
