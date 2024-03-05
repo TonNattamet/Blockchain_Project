@@ -4,9 +4,9 @@ import {BrowserRouter, NavLink, Routes, Route} from 'react-router-dom';
 import Home from './component/Home/Home';
 import Search from './component/Search/Search';
 import Login from './component/Login/Login';
+import Information from './component/Informtion/Information';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/search' element={<Search />}></Route>
                 <Route path='/login' element={<Login />}></Route>
+                <Route path='/information' element={<Information />}></Route>
             </Routes>
         </BrowserRouter>
     </>
