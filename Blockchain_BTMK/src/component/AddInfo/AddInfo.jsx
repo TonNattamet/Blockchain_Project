@@ -6,7 +6,7 @@ function AddInfo() {
   return (
     <div>
       <Navbar/>
-        <h1>AddInformation</h1>
+        <h1 className='addinfo-h1'>AddInformation</h1>
             <div className="main-info">
                 <div className="box-id">
                     ID
@@ -44,6 +44,14 @@ function AddInfo() {
                 </div>
                 <div className="box-address">
                     Address
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div className="box-address">
+                    DrugAllergy
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div className="box-address">
+                    CongenitalDisease
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
         </div>
