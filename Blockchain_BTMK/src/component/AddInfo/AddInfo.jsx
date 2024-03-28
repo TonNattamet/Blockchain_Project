@@ -22,14 +22,6 @@ function AddInfo() {
                 </div>
                 <div className="box-gender">
                     <legend>Gender</legend>
-                    {/* <span>
-                        <input type="radio" id="male" name="test" checked/>
-                        <label class="male" for="male">Male </label>
-                    </span>
-                    <span>
-                        <input type="radio" id="female" name="test"/>
-                        <label class="female" for="female">Female </label>
-                    </span> */}
                     <select name="gander" id="">
                         <option value="female">Female</option>
                         <option value="male">Male</option>
@@ -55,6 +47,7 @@ function AddInfo() {
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
         </div>
+        <input className="submit" type="submit" value="submit" />
     </div>
   )
 }

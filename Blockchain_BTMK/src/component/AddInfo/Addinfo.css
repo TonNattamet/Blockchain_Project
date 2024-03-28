@@ -12,6 +12,7 @@ h1{
     width: 900px;
     grid-template-columns: 300px 300px 300px;
     transform: translate(35%, 5%);
+    margin-bottom: 40px
 }
 .box-id{
     display: flex;
@@ -120,4 +121,15 @@ textarea{
     border-radius: 10px;
     padding: 10px;
     font-size: 16px;
+}
+.submit{
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: block;
+    margin: auto;
+    cursor: pointer;
 }
