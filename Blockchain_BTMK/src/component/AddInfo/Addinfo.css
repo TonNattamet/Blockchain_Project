@@ -1,10 +1,17 @@
+h1{
+    margin-top: 30px;
+    text-align: center;
+}
 .main-info{
     border: 1px solid black;
-    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 20px;
     display: grid;
     gap: 20px;
-    width: 1000px;
+    width: 900px;
     grid-template-columns: 300px 300px 300px;
+    transform: translate(35%, 5%);
 }
 .box-id{
     display: flex;
@@ -17,6 +24,7 @@
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
 .box-name{
     display: flex;
@@ -29,6 +37,7 @@
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
 .box-phone{
     display: flex;
@@ -41,30 +50,19 @@
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
-input[type=radio] {
-    display: none;
+.box-gender{
+    width: 200px;
 }
-input[type=radio]:checked + label {
-    background-color: #ccc;
-    color: #000;
+.box-gender select{
+    margin-top: 5px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
 }
-.female {
-    right: 0;
-    left: inherit;
-  }
-label{
-    border: 2px solid #ccc;
-    color: #ccc;
-    cursor: pointer;
-    font-size: 16px;
-    min-width: 50%;
-    padding: 2px 15px 2px 5px;
-}
-legend{
-    margin-bottom: 10px;
-}
-
 .box-date{
     display: flex;
     flex-direction: column;
@@ -76,6 +74,7 @@ legend{
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
 .box-height-weight{
     display: flex;
@@ -93,6 +92,7 @@ legend{
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
 .box-weight{
     display: flex;
@@ -105,6 +105,7 @@ legend{
     border-radius: 10px;
     padding: 10px;
     font-size: 18px;
+    border: 1px solid black;
 }
 .box-address{
     display: flex;
@@ -112,11 +113,11 @@ legend{
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.box-address input{
+textarea{
     margin-top: 5px;
     width: 600px;
-    height: 70px;
+    height: 100px;
     border-radius: 10px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
 }

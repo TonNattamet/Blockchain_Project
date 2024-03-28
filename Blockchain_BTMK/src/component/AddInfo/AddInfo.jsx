@@ -22,16 +22,23 @@ function AddInfo() {
                 </div>
                 <div className="box-gender">
                     <legend>Gender</legend>
-                    <label htmlFor="male">Male</label>
-                    <input type="radio" id='male' value="male" />
-
-                    <label htmlFor="female">Female</label>
-                    <input className="female" type="radio" id='female' value="female" />
+                    {/* <span>
+                        <input type="radio" id="male" name="test" checked/>
+                        <label class="male" for="male">Male </label>
+                    </span>
+                    <span>
+                        <input type="radio" id="female" name="test"/>
+                        <label class="female" for="female">Female </label>
+                    </span> */}
+                    <select name="gander" id="">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
                 </div>
                 
                 <div className="box-date">
                     Date of Birth
-                    <input type="text" />
+                    <input type="date" />
                 </div>
                 <div className="box-height-weight">
                     <div className="box-height">
@@ -45,7 +52,7 @@ function AddInfo() {
                 </div>
                 <div className="box-address">
                     Address
-                    <input type="text" />
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
         </div>
     </div>
