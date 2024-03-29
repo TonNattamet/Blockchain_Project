@@ -6,6 +6,7 @@ import Search from './component/Search/Search';
 import Login from './component/Login/Login';
 import Information from './component/Informtion/Information';
 import AddInfo from './component/AddInfo/AddInfo';
+import ListUser from './component/ListUser/ListUser';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path='/login' element={<Login />}></Route>
                 <Route path='/information' element={<Information />}></Route>
                 <Route path='/addInfo' element={<AddInfo />}></Route>
+                <Route path='/listuser' element={<ListUser />}></Route>
             </Routes>
         </BrowserRouter>
     </>
