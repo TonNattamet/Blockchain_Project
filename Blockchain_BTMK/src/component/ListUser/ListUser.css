@@ -26,3 +26,57 @@
     padding: 10px;
     font-size: 16px;
 }
+
+.box-main-list{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid #ccc;
+    transform: translate(25%, 10%);
+}
+.head-main-list{
+    display: flex;
+    background-color: aquamarine;
+    height: 35px;
+}
+.search-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: blueviolet;
+}
+.search-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: rgb(187, 134, 236);
+}
+.search-birth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: rgb(153, 250, 159);
+}
+.search-age{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: rgb(39, 232, 52);
+}
+.search-gender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: rgb(206, 232, 39);
+}
+.search-action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: rgb(252, 54, 226);
+}
