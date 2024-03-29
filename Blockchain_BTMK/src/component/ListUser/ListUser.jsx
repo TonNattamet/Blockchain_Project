@@ -56,8 +56,150 @@ function ListUser() {
                 <div className="action-list">
                     Logo list
                 </div>
-                
             </div>
+
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    Logo list
+                </div>
+            </div>
+
         </div>
     </div>
   )
