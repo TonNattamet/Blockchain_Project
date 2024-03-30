@@ -35,3 +35,13 @@
     border-radius: 10px;
     box-shadow: 2px 2px rgb(181, 180, 180);
 }
+.box-select-forgot{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.box-select-forgot > select{
+    width: 150px;
+    height: 40px;
+}

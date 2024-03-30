@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useState}  from 'react'
 import './Login.css'
 import Navbar from '../Navbar/Navbar'
+import Select from 'react-select'
+
+const options = [
+    { value: 'patient', label: 'Patient' },
+    { value: 'doctor', label: 'Doctor' },
+];
 
 function Login() {
+
+    const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <div>
         <Navbar/>
@@ -11,12 +20,20 @@ function Login() {
             <p>welcome to website</p>
             <input type="text" placeholder='ID' />
             <input type="text" placeholder='Password' />
-            <a className='forgot' href="#">forgot password ?</a>
+            <div className="box-select-forgot">
+                <Select className='select-login'
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options}
+                />
+                <a className='forgot' href="#">forgot password ?</a>
+            </div>
 
             <div className="box-login">
                 <h3>Login</h3>
             </div>
         </div>
+        
     </div>
   )
 }
