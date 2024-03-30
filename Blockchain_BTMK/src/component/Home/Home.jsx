@@ -11,7 +11,7 @@ function Home() {
       
         <Navbar/>
         <div className="main">
-        <img src={Image} alt="" />
+        <img className='main-img' src={Image} alt="" />
             <div className="main-home-text">
                 <h2>WE PROVIDE</h2>
                 <h1>FULL MEDICAL CARE</h1>
