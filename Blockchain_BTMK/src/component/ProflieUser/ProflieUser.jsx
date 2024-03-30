@@ -67,6 +67,33 @@ function ProflieUser() {
                 </div>
             </div>
 
+            <div className="emergency">
+                <h3>Emergency Contact</h3>
+
+                <div className="head-box-emer">
+                    <div className="head-profile-name">
+                        Full Name
+                    </div>
+                    <div className="head-profile-phone">
+                        Phone
+                    </div>
+                </div>
+
+                <div className="detail-emer-profile">
+                    <div className="profile-name">
+                        Moddy LoveHee
+                    </div>
+                    <div className="profile-phone">
+                        012-285-4578
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="profile-calcel">
+                Back
+            </div>
+
         </div>
     )
 }

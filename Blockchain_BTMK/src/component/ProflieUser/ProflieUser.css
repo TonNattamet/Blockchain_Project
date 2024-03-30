@@ -43,17 +43,14 @@
 .box-proflie-user{
     position: absolute;
     border: 1px solid #ccc;
-    transform: translate(85%, -150%);
+    transform: translate(85%, -155%);
     width: 700px;
-    height: 200px;
-    padding: 15px;
+    height: 190px;
+    padding: 15px 15px 0px 15px;
 }
 .box-proflie-user h3{
     padding-top: 10px;
     padding-left: 15px;
-}
-.box-proflie-user h3{
-    color: #9a9a9a;
 }
 
 .head-box-profile{
@@ -123,7 +120,7 @@
 .head-profile-address{
     display: flex;
     justify-content: left;
-    padding: 0px 15px 15px 15px;
+    padding: 0px 15px 10px 15px;
     flex-direction: column;
 }
 .head-profile-address span{
@@ -131,4 +128,39 @@
 }
 .head-profile-address p{
     margin-top: 10px;
+}
+
+.emergency{
+    position: absolute;
+    border: 1px solid #ccc;
+    transform: translate(85%, -65%);
+    width: 700px;
+    height: 125px;
+    padding: 15px;
+}
+.emergency h3{
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.head-box-emer{
+    display: flex;
+    padding: 10px 15px 15px 15px;
+}
+.detail-emer-profile{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0px 0px 15px 15px;
+}
+.profile-calcel{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transform: translate(1195%, 200%);
 }
