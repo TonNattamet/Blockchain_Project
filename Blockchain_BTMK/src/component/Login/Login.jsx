@@ -18,13 +18,14 @@ function Login() {
         <div className="main-login">
             <h3>Login</h3>
             <p>welcome to website</p>
-            <input type="text" placeholder='ID' />
-            <input type="text" placeholder='Password' />
+            <input type="text" placeholder='ID' required/>
+            <input type="text" placeholder='Password' required/>
             <div className="box-select-forgot">
                 <Select className='select-login'
                     defaultValue={selectedOption}
                     onChange={setSelectedOption}
                     options={options}
+                    required
                 />
                 <a className='forgot' href="#">forgot password ?</a>
             </div>
