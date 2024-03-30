@@ -30,6 +30,43 @@ function ProflieUser() {
                 </div>
             </div>
 
+            <div className="box-proflie-user">
+                <h3>PERSONAL DETAIL</h3>
+                <div className="head-box-profile">
+                    <div className="head-profile-name">
+                        Full Name
+                    </div>
+                    <div className="head-profile-birth">
+                        BirthDate
+                    </div>
+                    <div className="head-profile-height">
+                        Height (CM)
+                    </div>
+                    <div className="head-profile-weight">
+                        Weight (KG)
+                    </div>
+                    
+                </div>
+                <div className="detail-box-profile">
+                    <div className="profile-name">
+                        Moddy LoveHee
+                    </div>
+                    <div className="profile-birth">
+                        01/10/1001
+                    </div>
+                    <div className="profile-height">
+                        180
+                    </div>
+                    <div className="profile-weight">
+                        65
+                    </div>
+                </div>
+                <div className="head-profile-address">
+                    <span>Address</span>
+                    <p>1548/1548 Test Test</p>
+                </div>
+            </div>
+
         </div>
     )
 }
