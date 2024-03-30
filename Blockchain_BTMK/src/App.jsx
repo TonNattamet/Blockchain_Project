@@ -7,6 +7,7 @@ import Login from './component/Login/Login';
 import Information from './component/Informtion/Information';
 import AddInfo from './component/AddInfo/AddInfo';
 import ListUser from './component/ListUser/ListUser';
+import ProflieUser from './component/ProflieUser/ProflieUser';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/information' element={<Information />}></Route>
                 <Route path='/addInfo' element={<AddInfo />}></Route>
                 <Route path='/listuser' element={<ListUser />}></Route>
+                <Route path='/profileuser' element={<ProflieUser />}></Route>
             </Routes>
         </BrowserRouter>
     </>
