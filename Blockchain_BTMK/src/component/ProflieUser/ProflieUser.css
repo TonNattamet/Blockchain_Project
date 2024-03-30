@@ -1,10 +1,42 @@
 .box-img-user{
     width: 250px;
     height: 400px;
-    background-color: aqua;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translate(100%, 25%);
 }
 .profile-img-user{
-    background-color: red;
-    width: 300px;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+.box-img-name{
+    margin-bottom: 15px;
+}
+.box-img-detail{
+    border: 1px solid #ccc;
+    width: 200px;
     height: 100px;
+    padding: 10px;
+}
+.box-img-id{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.box-img-phone{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.box-img-gender{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }

@@ -9,10 +9,11 @@ function ProflieUser() {
 
         <div className="box-img-user">
             <img className='profile-img-user' src="" alt="" />
+            <div className="box-img-name">
+                Tanawat Kama
+            </div>
+
             <div className="box-img-detail">
-                <div className="box-img-name">
-                    Tanawat Kama
-                </div>
                 <div className="box-img-id">
                     <span>ID</span>
                     <p>1234567890123</p>
