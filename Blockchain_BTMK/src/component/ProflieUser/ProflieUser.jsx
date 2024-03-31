@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './ProflieUser.css'
+import { Link } from 'react-router-dom'
 
 function ProflieUser() {
 
@@ -91,7 +92,7 @@ function ProflieUser() {
             </div>
 
             <div className="profile-calcel">
-                Back
+                <Link to='/home'>Back</Link>
             </div>
 
         </div>
