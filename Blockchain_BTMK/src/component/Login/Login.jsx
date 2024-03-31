@@ -19,7 +19,7 @@ function Login() {
             </div>
 
             <div className="box-login">
-                <h3>Login</h3>
+                <Link to='/home'>Login</Link>
             </div>
         </div>
         

@@ -4,6 +4,7 @@ import Image from '../Image/bg-home2.jpg'
 import Navbar from '../Navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -17,7 +18,7 @@ function Home() {
                 <h1>FULL MEDICAL CARE</h1>
             </div>
             <div className="main-home-box">
-                <h3>Explore our service <FontAwesomeIcon className='icon-right' icon={faArrowRightLong} /></h3>
+                <Link to='/addinfo'>Create Information <FontAwesomeIcon className='icon-right' icon={faArrowRightLong} /></Link>
             </div>
         </div>
 

@@ -27,13 +27,15 @@
     margin-bottom: 20px;
 }
 .box-login{
-    color: white;
     height: 45px;
     text-align: center;
     padding-top: 12px;
     background-color: #0072BC;
     border-radius: 10px;
     box-shadow: 2px 2px rgb(181, 180, 180);
+}
+.box-login a{
+    color: white;
 }
 .box-select-forgot{
     display: flex;

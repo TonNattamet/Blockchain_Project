@@ -7,7 +7,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-105%, -50%);
     color: white;
     text-shadow: 2px 2px 4px #000000;
 }
@@ -20,19 +20,22 @@
     font-size: 45px;
 }
 .main-home-box{
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 275px;
     height: 60px;
     position: absolute;
     background-color: #0072BC;
     top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-145%, -50%);
     border-radius: 20px;
 }
-.main-home-box h3{
-    margin-top: 18px;
-    text-align: center;
+.main-home-box a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
     margin-right: 25px;
 }
 .icon-right{
