@@ -1,0 +1,130 @@
+.box-list-search{
+    display: flex;
+    width: 1000px;
+    height: 50px;
+    transform: translate(25%, 75%);
+    border: 1px solid #ccc;
+}
+.head-search{
+    width: 700px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px;
+}
+.list-search{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 300px;
+    background-color: aqua;
+}
+.list-search input{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.box-main-list{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid #ccc;
+    transform: translate(25%, 10%);
+}
+.head-main-list{
+    display: flex;
+    background-color: aquamarine;
+    height: 40px;
+}
+.search-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    background-color: blueviolet;
+}
+.search-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 225px;
+    background-color: rgb(187, 134, 236);
+}
+.search-birth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: rgb(153, 250, 159);
+}
+.search-age{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    background-color: rgb(39, 232, 52);
+}
+.search-gender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background-color: rgb(206, 232, 39);
+}
+.search-action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: rgb(252, 54, 226);
+}
+.main-list{
+    display: flex;
+    /* background-color: aqua; */
+    height: 40px;
+}
+.id-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    
+    /* background-color: rgb(229, 201, 255); */
+}
+.name-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 225px;
+    /* background-color: rgb(229, 201, 255); */
+}
+.birth-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    /* background-color: rgb(229, 201, 255); */
+}
+.age-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    /* background-color: rgb(229, 201, 255); */
+}
+.gender-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    /* background-color: rgb(229, 201, 255); */
+}
+.action-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    /* background-color: rgb(229, 201, 255); */
+}

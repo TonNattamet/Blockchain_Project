@@ -1,0 +1,45 @@
+.main-img{
+    position: fixed; 
+    min-width: 100%;
+    min-height: 100%;
+}
+.main-home-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-105%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+.main-home-text h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.main-home-text h1{
+    font-size: 45px;
+}
+.main-home-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    height: 60px;
+    position: absolute;
+    background-color: #0072BC;
+    top: 70%;
+    left: 50%;
+    transform: translate(-145%, -50%);
+    border-radius: 20px;
+}
+.main-home-box a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-right: 25px;
+}
+.icon-right{
+    position: absolute;
+    margin-top: 2.5px;
+    margin-left: 10px;
+}
