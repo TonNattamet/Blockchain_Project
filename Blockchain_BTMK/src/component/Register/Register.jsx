@@ -1,6 +1,7 @@
 import React from 'react'
 import './Register.css'
 import Navbar from '../Navbar/Navbar'
+import {Link} from 'react-router-dom'
 
 function Register() {
   return (
@@ -13,6 +14,9 @@ function Register() {
             <input type="text" placeholder='ID' required/>
             <input type="text" placeholder='Password' required/>
             <input type="text" placeholder='Confirm Password' required/>
+            <div className="box-select-forgot">
+                <Link to='/'>Login</Link>
+            </div>
 
             <div className="box-login">
                 <h3>Register</h3>
