@@ -18,7 +18,7 @@ function HomeDoctor() {
             </div>
 
             <div className="box-patient-search">
-                <FontAwesomeIcon className='icon-search' size="6x" icon={faFolderOpen} />
+              <FontAwesomeIcon className='icon-records' size='6x' icon={faFolderOpen} />
                 <h3>Patient Search</h3>
             </div>
         </div>
