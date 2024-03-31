@@ -1,0 +1,39 @@
+.box-main-doctor{
+    display: flex;
+}
+.box-patient-records{
+    width: 350px;
+    height: 250px;
+    background-color: #0072BC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(100%,55%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px #ccc;
+    font-size: 16px;
+}
+.icon-records{
+    color: #fff;
+    margin-bottom: 25px;
+}
+.box-patient-search{
+    width: 350px;
+    height: 250px;
+    background-color: #0072BC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(125%,55%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 6px 6px #ccc;
+    font-size: 16px;
+}
+.icon-search{
+    color: #fff;
+    margin-bottom: 25px;
+}
