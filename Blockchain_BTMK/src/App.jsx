@@ -10,6 +10,7 @@ import ListUser from './component/ListUser/ListUser';
 import ProflieUser from './component/ProflieUser/ProflieUser';
 import Register from './component/Register/Register';
 import LoginDoctor from './component/LoginDoctor/LoginDoctor';
+import HomeDoctor from './component/HomeDoctor/HomeDoctor';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
                 <Route path='/profileuser' element={<ProflieUser />}></Route>
                 <Route path='/register' element={<Register />}></Route>
                 <Route path='/logindoctor' element={<LoginDoctor />}></Route>
+                <Route path='/homedoctor' element={<HomeDoctor />}></Route>
             </Routes>
         </BrowserRouter>
     </>

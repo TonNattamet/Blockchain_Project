@@ -36,6 +36,7 @@
 }
 .box-login a{
     color: white;
+    text-decoration: none;
 }
 .box-select-forgot{
     display: flex;
