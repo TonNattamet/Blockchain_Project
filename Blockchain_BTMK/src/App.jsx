@@ -9,6 +9,7 @@ import AddInfo from './component/AddInfo/AddInfo';
 import ListUser from './component/ListUser/ListUser';
 import ProflieUser from './component/ProflieUser/ProflieUser';
 import Register from './component/Register/Register';
+import LoginDoctor from './component/LoginDoctor/LoginDoctor';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/listuser' element={<ListUser />}></Route>
                 <Route path='/profileuser' element={<ProflieUser />}></Route>
                 <Route path='/register' element={<Register />}></Route>
+                <Route path='/logindoctor' element={<LoginDoctor />}></Route>
             </Routes>
         </BrowserRouter>
     </>
