@@ -15,7 +15,7 @@ function Login() {
             <input type="text" placeholder='Password' required/>
             <div className="box-select-forgot">
                 <Link to='/register'>Register</Link>
-                <a className='forgot' href="#">Forgot password ?</a>
+                <Link to='/logindoctor'>Login Doctor</Link>
             </div>
 
             <div className="box-login">

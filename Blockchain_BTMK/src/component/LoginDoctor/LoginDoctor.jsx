@@ -10,6 +10,7 @@ function LoginDoctor() {
             <h3>Login Doctor</h3>
             <p>welcome to website</p>
             <input type="text" placeholder='ID' required/>
+            <input type="text" placeholder='Password' required/>
             <div className="box-select-forgot">
                 <Link to='/'>Login Patient</Link>
             </div>
