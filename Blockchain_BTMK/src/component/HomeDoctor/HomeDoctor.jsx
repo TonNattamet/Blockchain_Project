@@ -9,7 +9,7 @@ function HomeDoctor() {
     <div>
         <Navbar/>
 
-        <h2>Welcome Mr.Tanawat Kama</h2>
+        <h2 className='head-home-doctor'>Welcome Mr.Tanawat Kama</h2>
 
         <div className="box-main-doctor">
             <div className="box-patient-records">

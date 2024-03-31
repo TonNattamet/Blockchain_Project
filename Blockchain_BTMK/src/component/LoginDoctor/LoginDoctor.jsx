@@ -16,7 +16,7 @@ function LoginDoctor() {
             </div>
 
             <div className="box-login">
-                <h3>Login</h3>
+                <Link to='/homedoctor'>Login</Link>
             </div>
         </div>
     </div>
