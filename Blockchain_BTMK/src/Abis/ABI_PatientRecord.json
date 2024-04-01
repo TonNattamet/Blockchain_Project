@@ -12,13 +12,18 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "_gender",
+				"type": "string"
+			},
+			{
 				"internalType": "uint8",
 				"name": "_age",
 				"type": "uint8"
 			},
 			{
 				"internalType": "string",
-				"name": "_address",
+				"name": "_bloodType",
 				"type": "string"
 			},
 			{
@@ -45,17 +50,22 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint8",
+				"internalType": "uint256",
 				"name": "_id",
-				"type": "uint8"
+				"type": "uint256"
 			}
 		],
 		"name": "getPatient",
 		"outputs": [
 			{
-				"internalType": "uint8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "uint8"
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -94,21 +104,26 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint8",
+				"internalType": "uint256",
 				"name": "",
-				"type": "uint8"
+				"type": "uint256"
 			}
 		],
 		"name": "patients",
 		"outputs": [
 			{
-				"internalType": "uint8",
+				"internalType": "uint256",
 				"name": "id",
-				"type": "uint8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "string",
 				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "gender",
 				"type": "string"
 			},
 			{
@@ -118,7 +133,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "Address",
+				"name": "bloodType",
 				"type": "string"
 			},
 			{

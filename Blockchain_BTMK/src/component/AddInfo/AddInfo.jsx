@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Web3 from 'web3';
-// import ABI_recordPatient from '../../Abis/ABI_recordPatient';
+import ABI_PatientRecord from '../../Abis/ABI_PatientRecord'
 // import {useNavigate} from 'react-router-dom';
 import './Addinfo.css'
 
 function AddInfo() {
 
-    // const navigate = useNavigate();
-    // const ABI = ABI_recordPatient;
+    
+    const ABI = ABI_PatientRecord;
 
     // // สร้าง state เพื่อเก็บข้อมูลที่ผู้ใช้ป้อนเข้ามา
     const [formData, setFormData] = useState({
         id: '',
         name: '',
         age: '',
-        address: '',
+        phone:'',
+        gender:'',
+        bloodtype: '',
         drugAllergy: '',
         congenitalDisease: ''
     });
@@ -41,18 +43,17 @@ function AddInfo() {
           try {
             await window.ethereum.enable(); // ขออนุญาติให้เข้าถึงบัญชี MetaMask
             const accounts = await web3.eth.getAccounts();
-            const contractAddress = '0xDD883df7182Bb8519c7dEA2F99e64e8f4486C027'; // ที่อยู่ของ Smart Contract
-            const contract = new web3.eth.Contract(ABI, "0xDD883df7182Bb8519c7dEA2F99e64e8f4486C027");
+            const userAddress = accounts[0]; // เลือกบัญชี MetaMask ของผู้ใช้
+            const contractAddress = '0x50b1892B88d75361fb8Aa57DCf1D495C488459F3'; // ที่อยู่ของ Smart Contract
+            const contract = new web3.eth.Contract(ABI, contractAddress);
             // เรียกใช้ฟังก์ชันใน Smart Contract 
             await contract.methods.addPatient(
                 formData.id,
                 formData.name,
-                formData.gender,
-                formData.birthdate,
-                formData.height,
-                formData.weight,
-                formData.address,
                 formData.phone,
+                formData.gender,
+                formData.age,
+                formData.bloodtype,
                 formData.drugAllergy,
                 formData.congenitalDisease
             ).send({ from: userAddress }); // ส่ง transaction ด้วยที่อยู่ของผู้ใช้
@@ -75,7 +76,7 @@ function AddInfo() {
             <div className="main-info">
                 <div className="box-id">
                     ID
-                    <input type="text"
+                    <input type="number"
                     name="id" 
                     onChange={handleChange}
                     />
@@ -94,13 +95,13 @@ function AddInfo() {
                     onChange={handleChange}
                     />
                 </div>
-                {/* <div className="box-gender">
+                <div className="box-gender">
                     <legend>Gender</legend>
-                    <select name="gander" name="gender" onChange={handleChange}>
+                    <select name="gender" onChange={handleChange}>
                         <option value="female">Female</option>
                         <option value="male">Male</option>
                     </select>
-                </div> */}
+                </div>
                 
                 <div className="box-date">
                     age
@@ -109,29 +110,14 @@ function AddInfo() {
                     onChange={handleChange}
                     />
                 </div>
-                {/* <div className="box-height-weight">
+                <div className="box-height-weight">
                     <div className="box-height">
-                    Height (CM)
+                    Blood type
                         <input type="text"
-                        name="height" 
+                        name="bloodtype" 
                         onChange={handleChange}
                         />
                     </div>
-                    <div className="box-weight">
-                    Weight (KG)
-                        <input type="text" 
-                        name="weight" 
-                        onChange={handleChange}
-                        />
-                    </div>
-                </div> */}
-                <div className="box-address">
-                    Address
-                    <textarea name="address" 
-                    onChange={handleChange} 
-                    cols="30" 
-                    rows="10">   
-                    </textarea>
                 </div>
                 <div className="box-address">
                     DrugAllergy
