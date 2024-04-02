@@ -15,23 +15,22 @@ const db = mysql.createConnection({
 })
 
 app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM login WHERE id_user = ? AND password = ?";
-    db.query(sql, [req.body.id_user, req.body.password], (err, data) => {
-        if(err) return res.json("Error")
-        if(data.length > 0){
-            return res.json("Success")
-        }
-        else{
-            return res.json("No Record")
-        }
-    })
-})
+    const sentId_user = req.body.id_user
+    const sentPassword = req.body.password
 
-app.get('/test', (req, res) => {
-    const sql = "SELECT * FROM login"
-    db.query(sql, (err, data) => {
-        if(err) return res.json("Error")
-        return res.json(data)
+    const sql = 'SELECT * FROM login WHERE id_user = ? && password = ?'
+    const Values = [sentId_user, sentPassword]
+
+    db.query(sql, Values, (err, results) => {
+       if(err){
+            res.send({error: err})
+       }
+       if(results.length > 0){
+            res.send(results)
+       }
+       else{
+        res.send({message: 'Do not match!!!'})
+       }
     })
 })
 
