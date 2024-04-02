@@ -35,6 +35,25 @@ app.get('/test', (req, res) => {
     })
 })
 
+app.post('/register', (req, res) => {
+    const sentId_user = req.body.id_user
+    const sentPassword = req.body.password
+
+    const sql = 'INSERT INTO login (id_user, password) VALUES (?,?)'
+    const Values = [sentId_user, sentPassword]
+
+    db.query(sql, Values, (err, results) => {
+        if(err){
+            res.send(err)
+        }
+        else{
+            console.log('Success')
+            res.send({massage: 'User added!!!'})
+        }
+    })
+
+})
+
 
 app.listen(8081, () => {
     console.log("Listening...")
