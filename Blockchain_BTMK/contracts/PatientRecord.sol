@@ -3,12 +3,11 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract PatientRecord {
     struct Patient {
-        uint id; // ลดขนาดของชนิดข้อมูลเพื่อประหยัด gas
+        uint256 id; 
         string name;
         string gender;
-        uint8 age; // ลดขนาดของชนิดข้อมูลเพื่อประหยัด gas
+        uint8 age; 
         string bloodType;
-        // string Address;
         string phoneNumber;
         string drugAllergy;
         string congenitalDisease;
@@ -17,12 +16,11 @@ contract PatientRecord {
     mapping(uint => Patient) public patients;
 
     function addPatient(
-        uint8 _id,
+        uint256 _id,
         string memory _name,
         string memory _gender,
         uint8 _age,
         string memory _bloodType,
-        // string memory _address,
         string memory _phoneNumber,
         string memory _drugAllergy,
         string memory _congenitalDisease
@@ -33,23 +31,21 @@ contract PatientRecord {
             _gender,
             _age,
             _bloodType,
-            // _address,
             _phoneNumber,
             _drugAllergy,
             _congenitalDisease
         );
     }
 
-    function getPatient(uint _id)
+    function getPatient(uint256 _id)
         public
         view
         returns (
-            uint,
+            uint256,
             string memory,
             string memory,
             uint8,
             string memory,
-            // string memory,
             string memory,
             string memory,
             string memory

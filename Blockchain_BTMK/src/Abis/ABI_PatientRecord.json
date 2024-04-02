@@ -2,9 +2,9 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint8",
+				"internalType": "uint256",
 				"name": "_id",
-				"type": "uint8"
+				"type": "uint256"
 			},
 			{
 				"internalType": "string",
