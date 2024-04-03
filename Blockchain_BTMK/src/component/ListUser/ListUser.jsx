@@ -4,11 +4,11 @@ import './ListUser.css'
 
 const data = [
     {
-        id_user: "1234567890123",
-        name: "Tanawat Kama",
-        birth: "01/01/2000",
-        age: "21",
-        gender: "Male"
+        id_user: `1234567890123`,
+        name: `Tanawat Kama`,
+        birth: `01/01/2000`,
+        age: `21`,
+        gender: `Male`
     },
     {
         id_user: "9874561230213",
