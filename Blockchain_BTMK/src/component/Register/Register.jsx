@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import './Register.css'
 import Navbar from '../Navbar/Navbar'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate}  from 'react-router-dom'
 import axios from 'axios'
+
 
 function Register() {
 
+    const navigate = useNavigate();
     const [id_user, setId] = useState('')
     const [password, setPassword] = useState('')
 
@@ -14,7 +16,9 @@ function Register() {
             id_user: id_user,
             password: password
         }).then(()=>{
-            console.log("User has been create")
+            console.log("User has been create");
+            alert("Successfully registered");
+            navigate('/logindoctor');
         })
     }
 

@@ -1,11 +1,18 @@
 const express = require('express')
 const mysql = require('mysql')
 const cors = require('cors')
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json()
 
 const app = express();
 
 app.use(express.json())
 app.use(cors())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -52,6 +59,21 @@ app.post('/register', (req, res) => {
     })
 
 })
+
+// เพิ่มข้อมูลลงในฐานข้อมูล
+app.post('/patient', (req, res) => {
+    const patientData = req.body;
+    const sql = 'INSERT INTO Patient SET ?';
+
+    db.query(sql, patientData, (err, result) => {
+      if (err) {
+        res.status(500).send('Error saving data');
+        throw err;
+      }
+      console.log('Data inserted successfully');
+      res.status(200).send('Data inserted successfully');
+    });
+});
 
 
 app.listen(8081, () => {
