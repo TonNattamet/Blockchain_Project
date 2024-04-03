@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './Search.css'
+import { Link } from 'react-router-dom'
 
 function Search() {
   return (
@@ -15,7 +16,7 @@ function Search() {
             </div>
         </div>
 
-        <div className="box-main-list">
+        <div className="box-main-list-search">
             <div className="head-main-list">
                 <div className="search-id">
                     ID
@@ -53,10 +54,13 @@ function Search() {
                     Male
                 </div>
                 <div className="action-list">
-                    Logo list
+                    <Link to='/profileuser'>More</Link>
                 </div>
             </div>
 
+        </div>
+        <div className="profile-calcel">
+            <Link to='/homedoctor'>Back</Link>
         </div>
     </div>
   )

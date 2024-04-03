@@ -22,3 +22,9 @@
     border: 2px solid black;
     padding: 20px;
 }
+.box-main-list-search{
+    width: 1000px;
+    height: auto;
+    border: 1px solid #ccc;
+    transform: translate(25%, 60%);
+}

@@ -32,7 +32,7 @@
     width: 1000px;
     height: auto;
     border: 1px solid #ccc;
-    transform: translate(25%, 50%);
+    transform: translate(25%, 40%);
 }
 .head-main-list{
     display: flex;

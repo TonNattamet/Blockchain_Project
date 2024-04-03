@@ -1,30 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './ListUser.css'
-
-const data = [
-    {
-        id_user: `1234567890123`,
-        name: `Tanawat Kama`,
-        birth: `01/01/2000`,
-        age: `21`,
-        gender: `Male`
-    },
-    {
-        id_user: "9874561230213",
-        name: "Mod Love",
-        birth: "11/08/1988",
-        age: "18",
-        gender: "Male"
-    },
-    {
-        id_user: "5467892310231",
-        name: "Test Name",
-        birth: "12/55/6545",
-        age: "35",
-        gender: "Female"
-    },
-]
+import { Link } from 'react-router-dom'
 
 function ListUser() {
   return (
@@ -58,8 +35,9 @@ function ListUser() {
                     Action
                 </div>
             </div>
+
             <div className="main-list">
-            <div className="id-list">
+                <div className="id-list">
                     1234567890123
                 </div>
                 <div className="name-list">
@@ -75,12 +53,35 @@ function ListUser() {
                     Male
                 </div>
                 <div className="action-list">
-                    Logo list
+                    <Link to='/profileuser'>More</Link>
                 </div>
-            
-        </div>
-            
+            </div>  
 
+            <div className="main-list">
+                <div className="id-list">
+                    1234567890123
+                </div>
+                <div className="name-list">
+                    Tanawat Kama
+                </div>
+                <div className="birth-list">
+                    01/01/1111
+                </div>
+                <div className="age-list">
+                    21
+                </div>
+                <div className="gender-list">
+                    Male
+                </div>
+                <div className="action-list">
+                    <Link to='/profileuser'>More</Link>
+                </div>
+            </div> 
+
+        </div>
+
+        <div className="profile-calcel">
+            <Link to='/homedoctor'>Back</Link>
         </div>
         
     </div>
