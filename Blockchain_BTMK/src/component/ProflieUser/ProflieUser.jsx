@@ -1,9 +1,62 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import './ProflieUser.css'
 import { Link } from 'react-router-dom'
+import Web3 from 'web3';
+import ABI_PatientRecord from '../../Abis/ABI_PatientRecord'
+import { useLocation } from 'react-router-dom';
 
 function ProflieUser() {
+
+    const [patientData, setPatientData] = useState({
+        id: '',
+        name: '',
+        gender: '',
+        age: '',
+        bloodType: '',
+        phoneNumber: '',
+        drugAllergy: '',
+        congenitalDisease: ''
+    });
+
+    const StringId = patientData[0] ? patientData[0].toString() : '';
+    const StringAge = patientData[3] ? patientData[3].toString() : '';
+    // const StringAge = patientData.age.toString();
+    
+    
+    
+    const location = useLocation();
+    const id = location.state.id;
+    console.log(patientData);
+    console.log("ID IS :",StringId)
+
+    useEffect(() => {
+        async function fetchPatientData() {
+            if (!window.ethereum) {
+                alert('Please install MetaMask to interact with this application.');
+                return;
+            }
+
+            const web3 = new Web3(window.ethereum);
+            try {
+                await window.ethereum.enable();
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+                const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; // ที่อยู่ของ Smart Contract
+                const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
+
+                // เรียกใช้งานฟังก์ชัน getPatient จาก Smart Contract
+                const patient = await contract.methods.getPatient(id).call({ from: userAddress });
+
+                // อัปเดต state ด้วยข้อมูลผู้ป่วยที่ดึงมา
+                setPatientData(patient);
+            } catch (error) {
+                console.error('Error fetching patient data:', error);
+            }
+        }
+
+        fetchPatientData();
+    }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
 
     return (
         <div>
@@ -12,21 +65,21 @@ function ProflieUser() {
             <div className="box-img-user">
                 <img className='profile-img-user' src="" alt="" />
                 <div className="box-img-name">
-                    Tanawat Kama
+                    {patientData[1]}
                 </div>
 
                 <div className="box-img-detail">
                     <div className="box-img-id">
                         <span>ID</span>
-                        <p>1234567890123</p>
+                        <p> {StringId}</p>
                     </div>
                     <div className="box-img-phone">
                         <span>Phone</span>
-                        <p>062-291-1382</p>
+                        <p>{patientData[5]}</p>
                     </div>
                     <div className="box-img-gender">
                         <span>Gender</span>
-                        <p>Male</p>
+                        <p>{patientData[2]}</p>
                     </div>
                 </div>
             </div>
@@ -38,34 +91,34 @@ function ProflieUser() {
                         Full Name
                     </div>
                     <div className="head-profile-birth">
-                        BirthDate
+                        Age
                     </div>
                     <div className="head-profile-height">
-                        Height (CM)
+                        Blood Type
                     </div>
-                    <div className="head-profile-weight">
+                    {/* <div className="head-profile-weight">
                         Weight (KG)
-                    </div>
+                    </div> */}
                     
                 </div>
                 <div className="detail-box-profile">
                     <div className="profile-name">
-                        Moddy LoveHee
+                    {patientData[1]}
                     </div>
                     <div className="profile-birth">
-                        01/10/1001
+                    {StringAge}
                     </div>
                     <div className="profile-height">
-                        180
+                    {patientData[4]}
                     </div>
-                    <div className="profile-weight">
+                    {/* <div className="profile-weight">
                         65
-                    </div>
+                    </div> */}
                 </div>
-                <div className="head-profile-address">
+                {/* <div className="head-profile-address">
                     <span>Address</span>
                     <p>1548/1548 Test Test</p>
-                </div>
+                </div> */}
             </div>
 
             <div className="emergency">
@@ -73,19 +126,19 @@ function ProflieUser() {
 
                 <div className="head-box-emer">
                     <div className="head-profile-name">
-                        Full Name
+                        drugAllergy
                     </div>
                     <div className="head-profile-phone">
-                        Phone
+                        congenitalDisease
                     </div>
                 </div>
 
                 <div className="detail-emer-profile">
                     <div className="profile-name">
-                        Moddy LoveHee
+                    {patientData[6]}
                     </div>
                     <div className="profile-phone">
-                        012-285-4578
+                    {patientData[7]}
                     </div>
                 </div>
 
