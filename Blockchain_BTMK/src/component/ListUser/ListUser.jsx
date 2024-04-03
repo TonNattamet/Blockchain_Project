@@ -2,6 +2,30 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import './ListUser.css'
 
+const data = [
+    {
+        id_user: `1234567890123`,
+        name: `Tanawat Kama`,
+        birth: `01/01/2000`,
+        age: `21`,
+        gender: `Male`
+    },
+    {
+        id_user: "9874561230213",
+        name: "Mod Love",
+        birth: "11/08/1988",
+        age: "18",
+        gender: "Male"
+    },
+    {
+        id_user: "5467892310231",
+        name: "Test Name",
+        birth: "12/55/6545",
+        age: "35",
+        gender: "Female"
+    },
+]
+
 function ListUser() {
   return (
     <div>
@@ -10,9 +34,6 @@ function ListUser() {
         <div className="box-list-search">
             <div className="head-search">
                 Patient Records
-            </div>
-            <div className="list-search">
-                <input type="text" placeholder='Search'/>
             </div>
         </div>
 
@@ -58,149 +79,32 @@ function ListUser() {
                 </div>
             </div>
 
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
-            <div className="main-list">
-                <div className="id-list">
-                    1234567890123
-                </div>
-                <div className="name-list">
-                    Tanawat Kama
-                </div>
-                <div className="birth-list">
-                    01/01/1111
-                </div>
-                <div className="age-list">
-                    21
-                </div>
-                <div className="gender-list">
-                    Male
-                </div>
-                <div className="action-list">
-                    Logo list
-                </div>
-            </div>
+            
 
         </div>
+
+        {/* <table>
+            <thead>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Birth Day</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>ID</th>
+            </thead>
+            <tbody>
+                {data.map((d,i) => {
+                    <tr key={i}>
+                        <td>{d.id_user}</td>
+                        <td>{d.name}</td>
+                        <td>{d.birth}</td>
+                        <td>{d.age}</td>
+                        <td>{d.gender}</td>
+                    </tr>
+                })}
+            </tbody>
+        </table> */}
+        
     </div>
   )
 }
