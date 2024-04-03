@@ -59,7 +59,7 @@ function ListUser() {
                 </div>
             </div>
             <div className="main-list">
-                <div className="id-list">
+            <div className="id-list">
                     1234567890123
                 </div>
                 <div className="name-list">
@@ -77,33 +77,11 @@ function ListUser() {
                 <div className="action-list">
                     Logo list
                 </div>
-            </div>
-
+            
+        </div>
             
 
         </div>
-
-        {/* <table>
-            <thead>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Birth Day</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>ID</th>
-            </thead>
-            <tbody>
-                {data.map((d,i) => {
-                    <tr key={i}>
-                        <td>{d.id_user}</td>
-                        <td>{d.name}</td>
-                        <td>{d.birth}</td>
-                        <td>{d.age}</td>
-                        <td>{d.gender}</td>
-                    </tr>
-                })}
-            </tbody>
-        </table> */}
         
     </div>
   )

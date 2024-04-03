@@ -30,9 +30,9 @@
 
 .box-main-list{
     width: 1000px;
-    height: 400px;
+    height: auto;
     border: 1px solid #ccc;
-    transform: translate(25%, 10%);
+    transform: translate(25%, 50%);
 }
 .head-main-list{
     display: flex;
