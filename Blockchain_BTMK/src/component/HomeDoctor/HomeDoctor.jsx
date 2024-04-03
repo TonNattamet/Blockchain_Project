@@ -3,6 +3,7 @@ import './HomeDoctor.css'
 import Navbar from '../Navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook, faFolderOpen} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 function HomeDoctor() {
   return (
@@ -14,13 +15,13 @@ function HomeDoctor() {
         <div className="box-main-doctor">
             <div className="box-patient-records">
                 <FontAwesomeIcon className='icon-records' size='6x' icon={faBook} />
-                <h3>Patient Records</h3>
+                <Link to='/listuser'>Patient Records</Link>
             </div>
 
             <div className="box-patient-search">
               <FontAwesomeIcon className='icon-records' size='6x' icon={faFolderOpen} />
-                <h3>Patient Search</h3>
-            </div>
+                <Link to='/search'>Patient Search</Link>
+            </div> 
         </div>
 
     </div>
