@@ -41,6 +41,26 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.post('/logindoctor', (req, res) => {
+    const sentId_doctor = req.body.id_doctor
+    const sentPassword = req.body.password
+
+    const sql = 'SELECT * FROM login_doctor WHERE id_doctor = ? && password = ?'
+    const Values = [sentId_doctor, sentPassword]
+
+    db.query(sql, Values, (err, results) => {
+       if(err){
+            res.send({error: err})
+       }
+       if(results.length > 0){
+            res.send(results)
+       }
+       else{
+        res.send({message: 'Do not match!!!'})
+       }
+    })
+})
+
 app.post('/register', (req, res) => {
     const sentId_user = req.body.id_user
     const sentPassword = req.body.password
