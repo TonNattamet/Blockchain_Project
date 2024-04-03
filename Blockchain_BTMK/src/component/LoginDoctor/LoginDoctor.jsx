@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from '../Navbar/Navbar'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 function LoginDoctor() {
 
