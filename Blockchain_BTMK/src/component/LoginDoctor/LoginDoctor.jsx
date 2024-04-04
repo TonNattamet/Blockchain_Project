@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import Web3 from 'web3';
 
 function LoginDoctor() {
 
@@ -10,23 +11,39 @@ function LoginDoctor() {
     
     const navigateTo = useNavigate()
 
-    const loginDoctor = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:8081/logindoctor', {
-            id_doctor: id_doctor,
-            password: password
-        }).then((res)=>{
-            console.log()
-            if(res.data.message){
-                alert("Login Failed!!!")
-                navigateTo('/logindoctor');
-            }
-            else{
-                navigateTo('/homedoctor');
-            }
-        })
-    }
+    
 
+    const loginDoctor = async (e) => {
+        e.preventDefault();
+        if (!window.ethereum) {
+          alert('Please install MetaMask to interact with this application.');
+          return;
+        }
+        
+        try {
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+          const userAddress = accounts[0];
+          console.log(userAddress)
+      
+          axios.post('http://localhost:8081/logindoctor', {
+            id_doctor: id_doctor,
+            password: password,
+            userAddress: userAddress
+          }).then((res)=>{
+            if(res.data.message){
+              alert("Login Failed!!!")
+              navigateTo('/logindoctor');
+            } else {
+              navigateTo('/homedoctor');
+            }
+          })
+        } catch (error) {
+          console.error('Error enabling MetaMask:', error);
+        }
+      }
+      
+      
     const onSubmit = () => {
         setId('')
         setPassword('')

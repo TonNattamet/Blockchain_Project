@@ -5,50 +5,81 @@ import { Link } from 'react-router-dom'
 import Web3 from 'web3';
 import ABI_PatientRecord from '../../Abis/ABI_PatientRecord'
 import { useLocation } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
 function ProflieUser() {
 
-    const [patientData, setPatientData] = useState({
-        id: '',
-        name: '',
-        gender: '',
-        age: '',
-        bloodType: '',
-        phoneNumber: '',
-        drugAllergy: '',
-        congenitalDisease: ''
-    });
+        const [patientData, setPatientData] = useState({
+            id: '',
+            name: '',
+            gender: '',
+            age: '',
+            bloodType: '',
+            phoneNumber: '',
+            drugAllergy: '',
+            congenitalDisease: ''
+        });
+        const [userList, setUserList] = useState([]);
 
-    const StringId = patientData[0] ? patientData[0].toString() : '';
-    const StringAge = patientData[3] ? patientData[3].toString() : '';
-    
-    const location = useLocation();
-    const id = location.state.id;
 
-    useEffect(() => {
-        async function fetchPatientData() {
-            if (!window.ethereum) {
-                alert('Please install MetaMask to interact with this application.');
-                return;
+        const StringId = patientData[0] ? patientData[0].toString() : '';
+        const StringAge = patientData[3] ? patientData[3].toString() : '';
+        
+        const location = useLocation();
+        const id = location.state.id;
+
+        useEffect(() => {
+            async function fetchPatientData() {
+                if (!window.ethereum) {
+                    alert('Please install MetaMask to interact with this application.');
+                    return;
+                }
+
+                const web3 = new Web3(window.ethereum);
+                try {
+                    await window.ethereum.enable();
+                    const accounts = await web3.eth.getAccounts();
+                    const userAddress = accounts[0];
+                    const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
+                    const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
+                    const patient = await contract.methods.getPatient(id).call({ from: userAddress });
+                    setPatientData(patient);
+                } catch (error) {
+                    console.error('Error fetching patient data:', error);
+                }
             }
 
-            const web3 = new Web3(window.ethereum);
-            try {
-                await window.ethereum.enable();
-                const accounts = await web3.eth.getAccounts();
-                const userAddress = accounts[0];
-                const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
-                const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
-                const patient = await contract.methods.getPatient(id).call({ from: userAddress });
-                setPatientData(patient);
-            } catch (error) {
-                console.error('Error fetching patient data:', error);
-            }
+            fetchPatientData();
+        }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
+
+        useEffect(() => {
+            addData();
+        }, [patientData]);
+
+        const addData = () => {
+            axios.post('http://localhost:8081/patient', {
+                id: StringId,
+                name: patientData[1],
+                age: StringAge,
+                gender: patientData[2],
+                phoneNumber: patientData[5]
+            }).then(() => {
+                // เพิ่มผู้ป่วยใหม่ลงใน userList หลังจากบันทึกลงในฐานข้อมูลเรียบร้อยแล้ว
+                setUserList([
+                    ...userList,
+                    {
+                        id: StringId,
+                        name: patientData[1],
+                        age: StringAge,
+                        gender: patientData[2],
+                        phoneNumber: patientData[5]
+                    }
+                ]);
+            }).catch(error => {
+                console.error('Error saving patient data:', error);
+            });
         }
-
-        fetchPatientData();
-    }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
+        
 
     // useEffect(() => {
     //     function postData() {
