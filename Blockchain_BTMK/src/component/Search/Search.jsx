@@ -14,7 +14,7 @@ function Search() {
 
             <div className="box-search">
                 <input type="text" placeholder='Search' />
-                <button className='button-search'>Search</button>
+                <Link to='/doctorsearch' className='button-search'>Search</Link>
             </div>
 
             <div className="profile-calcel">

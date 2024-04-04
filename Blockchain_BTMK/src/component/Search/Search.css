@@ -26,7 +26,13 @@
     padding: 20px;
     font-size: 16px;
 }
-.button-search{
+.box-search a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.button-search {
     background-color: #0072BC;
     width: 100px;
     border-radius: 20px;
