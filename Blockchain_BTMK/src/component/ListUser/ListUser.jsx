@@ -53,7 +53,7 @@ function ListUser() {
                     Male
                 </div>
                 <div className="action-list">
-                    <Link to='/profileuser'>More</Link>
+                    <Link to='/doctorsearch'>More</Link>
                 </div>
             </div>  
 
@@ -74,7 +74,7 @@ function ListUser() {
                     Male
                 </div>
                 <div className="action-list">
-                    <Link to='/profileuser'>More</Link>
+                    <Link to='/doctorsearch'>More</Link>
                 </div>
             </div> 
 
