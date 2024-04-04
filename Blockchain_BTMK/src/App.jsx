@@ -11,6 +11,7 @@ import ProflieUser from './component/ProflieUser/ProflieUser';
 import Register from './component/Register/Register';
 import LoginDoctor from './component/LoginDoctor/LoginDoctor';
 import HomeDoctor from './component/HomeDoctor/HomeDoctor';
+import DoctorSearch from './component/DoctorSearch/DoctorSearch';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                 <Route path='/register' element={<Register />}></Route>
                 <Route path='/logindoctor' element={<LoginDoctor />}></Route>
                 <Route path='/homedoctor' element={<HomeDoctor />}></Route>
+                <Route path='/doctorsearch' element={<DoctorSearch />}></Route>
             </Routes>
         </BrowserRouter>
     </>
