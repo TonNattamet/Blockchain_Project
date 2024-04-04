@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Web3 from 'web3';
 import ABI_PatientRecord from '../../Abis/ABI_PatientRecord'
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 function ProflieUser() {
 
@@ -50,35 +50,35 @@ function ProflieUser() {
         fetchPatientData();
     }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
 
-    useEffect(() => {
-        function postData() {
-            // แปลงข้อมูล BigInt เป็น String
-            const dataToSend = {
-                id: StringId,
-                name: patientData[1],
-                gender: patientData[2],
-                age: StringAge,
-                bloodType: patientData[4],
-                phoneNumber: patientData[5],
-                drugAllergy: patientData[6],
-                congenitalDisease: patientData[7]
-            };
+    // useEffect(() => {
+    //     function postData() {
+    //         // แปลงข้อมูล BigInt เป็น String
+    //         const dataToSend = {
+    //             id: StringId,
+    //             name: patientData[1],
+    //             gender: patientData[2],
+    //             age: StringAge,
+    //             bloodType: patientData[4],
+    //             phoneNumber: patientData[5],
+    //             drugAllergy: patientData[6],
+    //             congenitalDisease: patientData[7]
+    //         };
         
-            console.log("dataToSend is", dataToSend);
+    //         console.log("dataToSend is", dataToSend);
         
-            axios.post('http://localhost:8081/patient',dataToSend)
-            .then(response => {
-                console.log(response.data);
-                // เพิ่มการจัดการหลังจากที่ส่งข้อมูลสำเร็จ ตามที่ต้องการ
-            })
-            .catch(error => {
-                console.error('Error saving data:', error);
-                console.error('Error details:', error.response);
-                // เพิ่มการจัดการข้อผิดพลาดตามที่ต้องการ
-            });
-        }
-        postData();
-      }, [patientData]);
+    //         axios.post('http://localhost:8081/patient',dataToSend)
+    //         .then(response => {
+    //             console.log(response.data);
+    //             // เพิ่มการจัดการหลังจากที่ส่งข้อมูลสำเร็จ ตามที่ต้องการ
+    //         })
+    //         .catch(error => {
+    //             console.error('Error saving data:', error);
+    //             console.error('Error details:', error.response);
+    //             // เพิ่มการจัดการข้อผิดพลาดตามที่ต้องการ
+    //         });
+    //     }
+    //     postData();
+    //   }, [patientData]);
     
       
 
