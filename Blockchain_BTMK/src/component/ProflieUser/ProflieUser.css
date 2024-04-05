@@ -9,7 +9,7 @@
     transform: translate(100%, 25%);
 }
 .profile-img-user{
-    border: 1px solid #ccc;
+
     width: 200px;
     height: 200px;
     margin-bottom: 15px;
@@ -163,8 +163,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     transform: translate(1195%, 200%);
+    background-color: #0072BC;
 }
 .profile-calcel a{
-    color: black;
+    color: white;
     text-decoration: none;
 }

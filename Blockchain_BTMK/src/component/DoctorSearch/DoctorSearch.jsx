@@ -56,7 +56,7 @@ function DoctorSearch() {
         <Navbar/>
 
         <div className="box-img-user">
-                <img className='profile-img-user' src="https://e7.pngegg.com/pngimages/184/821/png-clipart-mangalore-united-states-management-computer-science-business-profile-angle-white-thumbnail.png" alt="" />
+                <img className='profile-img-user' src="https://i.pinimg.com/550x/13/d9/7d/13d97d540be78ef119a9e357b76816a1.jpg" alt="" />
                 <div className="box-img-name">
                     {patientData[1]}
                 </div>
