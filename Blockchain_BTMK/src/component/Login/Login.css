@@ -45,6 +45,10 @@
     margin-bottom: 20px;
     justify-content: space-between;
 }
+.box-select-forgot a{
+    color: black;
+    text-decoration: none;
+}
 .box-select-forgot > select{
     width: 150px;
     height: 40px;

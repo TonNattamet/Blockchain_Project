@@ -71,7 +71,7 @@ function Login() {
                 </div>
 
                 <div className="box-login">
-                    <div onClick={loginUser}>Login</div>
+                    <h3 onClick={loginUser}>Login</h3>
                 </div>
                     
 

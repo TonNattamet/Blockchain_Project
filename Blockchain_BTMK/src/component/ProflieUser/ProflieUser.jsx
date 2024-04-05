@@ -118,7 +118,7 @@ function ProflieUser() {
             <Navbar/>
 
             <div className="box-img-user">
-                <img className='profile-img-user' src="" alt="" />
+                <img className='profile-img-user' src="https://e7.pngegg.com/pngimages/184/821/png-clipart-mangalore-united-states-management-computer-science-business-profile-angle-white-thumbnail.png" alt="" />
                 <div className="box-img-name">
                     {patientData[1]}
                 </div>
@@ -183,7 +183,7 @@ function ProflieUser() {
                     <div className="head-profile-name">
                         drugAllergy
                     </div>
-                    <div className="head-profile-phone">
+                    <div className="head-profile-name">
                         congenitalDisease
                     </div>
                 </div>

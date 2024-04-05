@@ -39,7 +39,7 @@ function DoctorSearch() {
                 await window.ethereum.enable();
                 const accounts = await web3.eth.getAccounts();
                 const userAddress = accounts[0];
-                const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
+                const contractAddress = '0x82bf081aE1B8005c446a3Be376285355CE58e228'; 
                 const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
                 const patient = await contract.methods.getPatient(id).call({ from: userAddress });
                 setPatientData(patient);
@@ -56,7 +56,7 @@ function DoctorSearch() {
         <Navbar/>
 
         <div className="box-img-user">
-                <img className='profile-img-user' src="" alt="" />
+                <img className='profile-img-user' src="https://e7.pngegg.com/pngimages/184/821/png-clipart-mangalore-united-states-management-computer-science-business-profile-angle-white-thumbnail.png" alt="" />
                 <div className="box-img-name">
                     {patientData[1]}
                 </div>
@@ -121,7 +121,7 @@ function DoctorSearch() {
                     <div className="head-profile-name">
                         drugAllergy
                     </div>
-                    <div className="head-profile-phone">
+                    <div className="head-profile-name">
                         congenitalDisease
                     </div>
                 </div>

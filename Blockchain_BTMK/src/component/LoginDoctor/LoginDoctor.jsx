@@ -71,7 +71,7 @@ function LoginDoctor() {
                 </div>
 
                 <div className="box-login">
-                    <div onClick={loginDoctor}>Login</div>
+                    <h3 onClick={loginDoctor}>Login</h3>
                 </div>
             </div>
         </form>
