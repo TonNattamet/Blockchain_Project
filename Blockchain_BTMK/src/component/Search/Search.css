@@ -23,8 +23,10 @@
     height: 45px;
     border-radius: 20px;
     border: 1px solid black;
-    padding: 20px;
     font-size: 16px;
+}
+.search-input{
+    padding-left: 20px;
 }
 .box-search a{
     display: flex;
@@ -32,13 +34,12 @@
     align-items: center;
     text-decoration: none;
 }
-.button-search {
-    background-color: #0072BC;
+.button-search{
+    
     width: 100px;
     border-radius: 20px;
-    color: white;
-    border: none;
-    font-size: 16px;
+    background-color: white;
+
 }
 .head-box-search{
     margin-top: 20px;

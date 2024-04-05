@@ -29,18 +29,19 @@ function Search() {
             <h2 className='head-box-search'>Patient's ID Card Number</h2>
 
             <div className="box-search">
-                <input type="text" 
+                <input className='search-input'
+                type="text" 
                 placeholder='Search'
                 onChange={handleidpatient}
                 />
                 {/* <Link to='/doctorsearch' className='button-search'
                 onClick={handleSubmit} 
                 >Search</Link> */}
-                 <input className="submit" 
-        type="submit" 
-        value="submit"
-        onClick={handleSubmit} 
-         />
+                 <input className="button-search" 
+                    type="submit" 
+                    value="submit"
+                    onClick={handleSubmit} 
+                />
             </div>
 
             <div className="profile-calcel">
