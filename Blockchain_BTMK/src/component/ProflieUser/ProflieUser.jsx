@@ -9,76 +9,107 @@ import axios from 'axios';
 
 function ProflieUser() {
 
-    const [patientData, setPatientData] = useState({
-        id: '',
-        name: '',
-        gender: '',
-        age: '',
-        bloodType: '',
-        phoneNumber: '',
-        drugAllergy: '',
-        congenitalDisease: ''
-    });
+        const [patientData, setPatientData] = useState({
+            id: '',
+            name: '',
+            gender: '',
+            age: '',
+            bloodType: '',
+            phoneNumber: '',
+            drugAllergy: '',
+            congenitalDisease: ''
+        });
+        const [userList, setUserList] = useState([]);
 
-    const StringId = patientData[0] ? patientData[0].toString() : '';
-    const StringAge = patientData[3] ? patientData[3].toString() : '';
-    
-    const location = useLocation();
-    const id = location.state.id;
 
-    useEffect(() => {
-        async function fetchPatientData() {
-            if (!window.ethereum) {
-                alert('Please install MetaMask to interact with this application.');
-                return;
+        const StringId = patientData[0] ? patientData[0].toString() : '';
+        const StringAge = patientData[3] ? patientData[3].toString() : '';
+        
+        const location = useLocation();
+        const id = location.state.id;
+
+        useEffect(() => {
+            async function fetchPatientData() {
+                if (!window.ethereum) {
+                    alert('Please install MetaMask to interact with this application.');
+                    return;
+                }
+
+                const web3 = new Web3(window.ethereum);
+                try {
+                    await window.ethereum.enable();
+                    const accounts = await web3.eth.getAccounts();
+                    const userAddress = accounts[0];
+                    const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
+                    const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
+                    const patient = await contract.methods.getPatient(id).call({ from: userAddress });
+                    setPatientData(patient);
+                } catch (error) {
+                    console.error('Error fetching patient data:', error);
+                }
             }
 
-            const web3 = new Web3(window.ethereum);
-            try {
-                await window.ethereum.enable();
-                const accounts = await web3.eth.getAccounts();
-                const userAddress = accounts[0];
-                const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
-                const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
-                const patient = await contract.methods.getPatient(id).call({ from: userAddress });
-                setPatientData(patient);
-            } catch (error) {
-                console.error('Error fetching patient data:', error);
-            }
-        }
+            fetchPatientData();
+        }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
 
-        fetchPatientData();
-    }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
+        useEffect(() => {
+            addData();
+        }, [patientData]);
 
-    useEffect(() => {
-        function postData() {
-            // แปลงข้อมูล BigInt เป็น String
-            const dataToSend = {
+        const addData = () => {
+            axios.post('http://localhost:8081/patient', {
                 id: StringId,
                 name: patientData[1],
-                gender: patientData[2],
                 age: StringAge,
-                bloodType: patientData[4],
-                phoneNumber: patientData[5],
-                drugAllergy: patientData[6],
-                congenitalDisease: patientData[7]
-            };
-        
-            console.log("dataToSend is", dataToSend);
-        
-            axios.post('http://localhost:8081/patient',dataToSend)
-            .then(response => {
-                console.log(response.data);
-                // เพิ่มการจัดการหลังจากที่ส่งข้อมูลสำเร็จ ตามที่ต้องการ
-            })
-            .catch(error => {
-                console.error('Error saving data:', error);
-                console.error('Error details:', error.response);
-                // เพิ่มการจัดการข้อผิดพลาดตามที่ต้องการ
+                gender: patientData[2],
+                phoneNumber: patientData[5]
+            }).then(() => {
+                // เพิ่มผู้ป่วยใหม่ลงใน userList หลังจากบันทึกลงในฐานข้อมูลเรียบร้อยแล้ว
+                setUserList([
+                    ...userList,
+                    {
+                        id: StringId,
+                        name: patientData[1],
+                        age: StringAge,
+                        gender: patientData[2],
+                        phoneNumber: patientData[5]
+                    }
+                ]);
+            }).catch(error => {
+                console.error('Error saving patient data:', error);
             });
         }
-        postData();
-      }, [patientData]);
+        
+
+    // useEffect(() => {
+    //     function postData() {
+    //         // แปลงข้อมูล BigInt เป็น String
+    //         const dataToSend = {
+    //             id: StringId,
+    //             name: patientData[1],
+    //             gender: patientData[2],
+    //             age: StringAge,
+    //             bloodType: patientData[4],
+    //             phoneNumber: patientData[5],
+    //             drugAllergy: patientData[6],
+    //             congenitalDisease: patientData[7]
+    //         };
+        
+    //         console.log("dataToSend is", dataToSend);
+        
+    //         axios.post('http://localhost:8081/patient',dataToSend)
+    //         .then(response => {
+    //             console.log(response.data);
+    //             // เพิ่มการจัดการหลังจากที่ส่งข้อมูลสำเร็จ ตามที่ต้องการ
+    //         })
+    //         .catch(error => {
+    //             console.error('Error saving data:', error);
+    //             console.error('Error details:', error.response);
+    //             // เพิ่มการจัดการข้อผิดพลาดตามที่ต้องการ
+    //         });
+    //     }
+    //     postData();
+    //   }, [patientData]);
     
       
 

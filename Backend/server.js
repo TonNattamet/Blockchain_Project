@@ -80,20 +80,32 @@ app.post('/register', (req, res) => {
 
 })
 
-// เพิ่มข้อมูลลงในฐานข้อมูล
 app.post('/patient', (req, res) => {
     const patientData = req.body;
-    const sql = 'INSERT INTO Patient SET ?';
-
-    db.query(sql, patientData, (err, result) => {
+    const { id, name, age, gender, phoneNumber } = patientData;
+  
+    const sql = 'INSERT INTO patients (id, name, age, gender, phoneNumber) VALUES (?, ?, ?, ?, ?)';
+    db.query(sql, [id, name, age, gender, phoneNumber], (err, result) => {
       if (err) {
-        res.status(500).send('Error saving data');
-        throw err;
+        console.error('Error inserting patient data into MySQL:', err);
+        res.status(500).send('Error saving patient data.');
+      } else {
+        console.log('Patient data saved successfully.');
+        res.status(200).send('Patient data saved successfully.');
       }
-      console.log('Data inserted successfully');
-      res.status(200).send('Data inserted successfully');
     });
-});
+  });
+
+  app.get('/datapatients', (req, res) => {
+    db.query('SELECT * FROM patients', (error, results, fields) => {
+      if (error) throw error;
+      console.log('Patients data:', results);
+      res.json(results);
+    });
+  });
+  
+  
+
 
 
 app.listen(8081, () => {

@@ -1,8 +1,56 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import ABI_PatientRecord from '../../Abis/ABI_PatientRecord'
+import Web3 from 'web3';
+
 
 function DoctorSearch() {
+
+    const location = useLocation();
+    const id = location.state.id;
+    console.log("ID is",id);
+
+    const [patientData, setPatientData] = useState({
+        id: '',
+        name: '',
+        gender: '',
+        age: '',
+        bloodType: '',
+        phoneNumber: '',
+        drugAllergy: '',
+        congenitalDisease: ''
+    });
+
+    const StringId = patientData[0] ? patientData[0].toString() : '';
+    const StringAge = patientData[3] ? patientData[3].toString() : '';
+    
+
+    useEffect(() => {
+        async function fetchPatientData() {
+            if (!window.ethereum) {
+                alert('Please install MetaMask to interact with this application.');
+                return;
+            }
+
+            const web3 = new Web3(window.ethereum);
+            try {
+                await window.ethereum.enable();
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+                const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; 
+                const contract = new web3.eth.Contract(ABI_PatientRecord, contractAddress);
+                const patient = await contract.methods.getPatient(id).call({ from: userAddress });
+                setPatientData(patient);
+            } catch (error) {
+                console.error('Error fetching patient data:', error);
+            }
+        }
+
+        fetchPatientData();
+    }, [id]); // เรียกใช้งาน useEffect เมื่อ ID ของผู้ป่วยเปลี่ยนแปลง
+
   return (
     <div>
         <Navbar/>
@@ -10,21 +58,21 @@ function DoctorSearch() {
         <div className="box-img-user">
                 <img className='profile-img-user' src="" alt="" />
                 <div className="box-img-name">
-                    Mod Love Who
+                    {patientData[1]}
                 </div>
 
                 <div className="box-img-detail">
                     <div className="box-img-id">
                         <span>ID</span>
-                        <p> 0123456789123</p>
+                        <p> {StringId}</p>
                     </div>
                     <div className="box-img-phone">
                         <span>Phone</span>
-                        <p>0123456789</p>
+                        <p>{patientData[5]}</p>
                     </div>
                     <div className="box-img-gender">
                         <span>Gender</span>
-                        <p>Female</p>
+                        <p>{patientData[2]}</p>
                     </div>
                 </div>
             </div>
@@ -48,13 +96,13 @@ function DoctorSearch() {
                 </div>
                 <div className="detail-box-profile">
                     <div className="profile-name">
-                        Mod Love Who
+                        {patientData[1]}
                     </div>
                     <div className="profile-birth">
-                        01/01/1001
+                         {StringAge}
                     </div>
                     <div className="profile-height">
-                        190
+                    {patientData[4]}
                     </div>
                     {/* <div className="profile-weight">
                         65
@@ -80,10 +128,10 @@ function DoctorSearch() {
 
                 <div className="detail-emer-profile">
                     <div className="profile-name">
-                        Mod Love Who
+                    {patientData[6]}
                     </div>
                     <div className="profile-phone">
-                        0123456789
+                    {patientData[7]}
                     </div>
                 </div>
 

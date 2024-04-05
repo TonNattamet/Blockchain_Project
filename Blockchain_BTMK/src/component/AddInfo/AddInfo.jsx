@@ -10,7 +10,8 @@ function AddInfo() {
     const navigate = useNavigate();
     const ABI = ABI_PatientRecord;
 
-    // // สร้าง state เพื่อเก็บข้อมูลที่ผู้ใช้ป้อนเข้ามา
+
+    // สร้าง state เพื่อเก็บข้อมูลที่ผู้ใช้ป้อนเข้ามา
     const [formData, setFormData] = useState({
         id: '',
         name: '',
@@ -31,7 +32,7 @@ function AddInfo() {
     };
     
 
-    //    // Function สำหรับส่งข้อมูลไปยัง Smart Contract
+    // Function สำหรับส่งข้อมูลไปยัง Smart Contract
     const handleSubmit = async () => {
         console.log(formData)
         if (!window.ethereum) {
@@ -46,7 +47,6 @@ function AddInfo() {
             const userAddress = accounts[0]; // เลือกบัญชี MetaMask ของผู้ใช้
             const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; // ที่อยู่ของ Smart Contract
             const contract = new web3.eth.Contract(ABI, contractAddress);
-            // เรียกใช้ฟังก์ชันใน Smart Contract 
             await contract.methods.addPatient(
                 formData.id,
                 formData.name,
@@ -60,8 +60,8 @@ function AddInfo() {
     
             // หลังจากส่งข้อมูลเสร็จสิ้น สามารถทำอย่างไรก็ได้ เช่น แสดงข้อความว่าบันทึกข้อมูลสำเร็จ
             alert('Data saved successfully');
-             // ส่งไปยังหน้าโปรไฟล์ผู้ใช้พร้อม ID
-             navigate('/profileuser', { state: { id: formData.id } }); // ส่งไปยังหน้าโปรไฟล์ผู้ใช้พร้อม ID
+            // ส่งไปยังหน้าโปรไฟล์ผู้ใช้พร้อม ID
+            navigate('/profileuser', { state: { id: formData.id } }); // ส่งไปยังหน้าโปรไฟล์ผู้ใช้พร้อม ID
 
         } catch (error) {
             // หากเกิดข้อผิดพลาดในการส่งข้อมูล ให้แสดงข้อความแจ้งเตือน
