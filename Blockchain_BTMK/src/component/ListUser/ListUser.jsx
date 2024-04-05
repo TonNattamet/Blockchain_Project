@@ -45,9 +45,6 @@ function ListUser() {
                 <div className="search-birth">
                     PhoneNumber
                 </div>
-                <div className="search-action">
-                    Action
-                </div>
             </div>
 
             {patients.map((patient, index) => (
@@ -66,9 +63,6 @@ function ListUser() {
         </div>
         <div className="birth-list">
             {patient.phoneNumber}
-        </div>
-        <div className="action-list">
-            <Link to='/doctorsearch'>More</Link>
         </div>
         </div>
         ))}
