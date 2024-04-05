@@ -4,9 +4,10 @@ import Image from '../Image/bg-home2.jpg'
 import Navbar from '../Navbar/Navbar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Home() {
+
   return (
     <div>
       

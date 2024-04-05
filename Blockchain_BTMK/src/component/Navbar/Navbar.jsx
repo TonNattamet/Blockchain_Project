@@ -14,7 +14,8 @@ function Navbar() {
                 <h3>Service</h3>
                 <h3>Blog</h3>
                 <h3>Contact</h3>
-                <FontAwesomeIcon className='icon-search' icon={faMagnifyingGlass} />
+                <h3>User ID</h3>
+                {/* <FontAwesomeIcon className='icon-search' icon={faMagnifyingGlass} /> */}
             </div>
         </div>
     </div>

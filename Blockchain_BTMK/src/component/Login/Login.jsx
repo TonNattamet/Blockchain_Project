@@ -11,22 +11,36 @@ function Login() {
     
     const navigateTo = useNavigate()
 
-    const loginUser = (e) => {
+    const loginUser = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/login', {
-            id_user: id_user,
-            password: password
-        }).then((res)=>{
-            console.log()
-            if(res.data.message){
-                alert("Login Failed!!!")
-                navigateTo('/');
-            }
-            else{
-                navigateTo('/home');
-            }
-        })
+        if (!window.ethereum) {
+            alert('Please install MetaMask to interact with this application.');
+            return;
+        }
+        
+        try {
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+            const userAddress = accounts[0];
+            console.log(userAddress)
+    
+            axios.post('http://localhost:8081/login', {
+                id_user: id_user,
+                password: password
+            }).then((res)=>{
+                console.log(res);
+                if(res.data.message){
+                    alert("Login Failed!!!")
+                    navigateTo('/');
+                } else {
+                    navigateTo('/home', { userAddress: userAddress });
+                }
+            })
+        } catch (error) {
+            console.error('Error enabling MetaMask:', error);
+        }
     }
+    
 
     const onSubmit = () => {
         setId('')
