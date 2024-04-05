@@ -45,7 +45,7 @@ function AddInfo() {
             await window.ethereum.enable(); // ขออนุญาติให้เข้าถึงบัญชี MetaMask
             const accounts = await web3.eth.getAccounts();
             const userAddress = accounts[0]; // เลือกบัญชี MetaMask ของผู้ใช้
-            const contractAddress = '0x1c16ff5DBD27b5cFe63782c150F0dcB7b58D962A'; // ที่อยู่ของ Smart Contract
+            const contractAddress = '0x82bf081aE1B8005c446a3Be376285355CE58e228'; // ที่อยู่ของ Smart Contract
             const contract = new web3.eth.Contract(ABI, contractAddress);
             await contract.methods.addPatient(
                 formData.id,
@@ -99,7 +99,7 @@ function AddInfo() {
                     </select>
                 </div>
                 <div className="box-date">
-                    age
+                    Age
                     <input type="text" 
                     name="age" 
                     onChange={handleChange}

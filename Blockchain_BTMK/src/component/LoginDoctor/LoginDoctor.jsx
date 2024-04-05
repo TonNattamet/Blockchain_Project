@@ -61,7 +61,7 @@ function LoginDoctor() {
                     setIddoctor(event.target.value)
                 }}
                 required/>
-                <input type="text" placeholder='Password' 
+                <input type="password" placeholder='Password' 
                 onChange={(event)=>{
                     setPassword(event.target.value)
                 }}
