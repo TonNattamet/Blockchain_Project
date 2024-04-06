@@ -50,7 +50,7 @@ function AddInfo() {
             await contract.methods.addPatient(
                 formData.id,
                 formData.name,
-                formData.gender,
+                formData.gender, 
                 formData.age,
                 formData.bloodtype,
                 formData.phoneNumber,
