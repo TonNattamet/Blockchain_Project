@@ -18,7 +18,7 @@ function Register() {
         }).then(()=>{
             console.log("User has been create");
             alert("Successfully registered");
-            navigate('/logindoctor');
+            navigate('/');
         })
     }
 
