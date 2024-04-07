@@ -7,6 +7,7 @@ Blockchain_BTMK It is a web project for recording patient information using bloc
  1. [Installation](#installation) 
  2. [how to run the Project](#how-to-run-the-project)
  3. [How to set up Ganache with Truffle](#how-to-set-up-ganache-with-truffle)
+ 4. [How to set up Ganache with Metamask](#how-to-set-up-ganache-with-metamask)
 
 ## Installation
 1.Install Ganache
