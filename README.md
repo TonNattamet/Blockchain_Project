@@ -8,6 +8,7 @@ Blockchain_BTMK It is a web project for recording patient information using bloc
  2. [how to run the Project](#how-to-run-the-project)
  3. [How to set up Ganache with Truffle](#how-to-set-up-ganache-with-truffle)
  4. [How to set up Ganache with Metamask](#how-to-set-up-ganache-with-metamask)
+ 5. [How to set up smart contract in code](#how-to-set-up-smart-contract-in-code)
 
 ## Installation
 1.Install Ganache
@@ -124,3 +125,22 @@ Blockchain_BTMK It is a web project for recording patient information using bloc
 1.7.5 Enter your private key and import
 
 ![Screenshot 2024-04-08 013355](https://github.com/TonNattamet/Blockchain_Project/assets/117368788/371eaf87-6a04-4c10-983c-f81aa34423a1)
+
+## How to set up smart contract in code
+1.Compile and Deploy smart contract using Truffle
+
+
+    cd Blockchain_BTMK
+    
+    truffle complie
+    
+    truffle deploy
+    
+2.Copy contract address when finished running
+
+![Screenshot 2024-04-08 015228](https://github.com/TonNattamet/Blockchain_Project/assets/117368788/a5977f77-32e7-4c08-b2bf-4423a685ca89)
+
+3.Select File addinfo.jsx and DocterSearch.jsx and paste the address into the contactAddress variable.
+
+![Screenshot 2024-04-08 015614](https://github.com/TonNattamet/Blockchain_Project/assets/117368788/7e474b2f-2f63-46dd-ba99-25d724b45642)
+
