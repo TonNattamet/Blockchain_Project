@@ -45,7 +45,7 @@ function AddInfo() {
             await window.ethereum.enable(); // ขออนุญาติให้เข้าถึงบัญชี MetaMask
             const accounts = await web3.eth.getAccounts();
             const userAddress = accounts[0]; // เลือกบัญชี MetaMask ของผู้ใช้
-            const contractAddress = '0x82bf081aE1B8005c446a3Be376285355CE58e228'; // ที่อยู่ของ Smart Contract
+            const contractAddress = '0x9F705E5f4ca1eC47017be4ee5556D3DD775af7DA'; // ที่อยู่ของ Smart Contract
             const contract = new web3.eth.Contract(ABI, contractAddress);
             await contract.methods.addPatient(
                 formData.id,
